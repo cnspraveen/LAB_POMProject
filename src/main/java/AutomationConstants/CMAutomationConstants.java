@@ -7,5 +7,4 @@ public interface CMAutomationConstants
     String browserTypeDriverPath="./ExeFiles/chromedriver.exe";
     String url="https://cm-dev-preview.connectmehr.space";
     long time = 22;
-
 }
