@@ -18,19 +18,24 @@ public class LoginTest extends SuperNG
 	@Test
 	public void loginpage_test() throws InterruptedException
 	{ 
+	//Login to Salesforce
 		SF1Login_Page login = new SF1Login_Page (driver);
 		login.SFlogin(ReadProperties.getPropValue(CMAutomationConstants.propfilepath, "un"), ReadProperties.getPropValue(CMAutomationConstants.propfilepath, "pw"));	
+	//Auth page for authentication.
 		SF2AllowAccess_Page access = new SF2AllowAccess_Page(driver);
 		access.allowAccess();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 //		SF3Dashboard_Page logout = new SF3Dashboard_Page(driver);
 //		logout.logout();
+        //Base Page which has features/functionalities that are sticky/visible in all the pages such as features comes in headers and Footers       
 		SFBasePage bp = new SFBasePage(driver);
 		bp.profile(); 
-	
-        SF5ProfilePage profilePage = new SF5ProfilePage(driver);
-	//profilePage.toggleEmailNotfication();
+	//Navigate to profile page
+	SF5ProfilePage profilePage = new SF5ProfilePage(driver);
+	//Profile->Preference page where user toggles the email notfication button(option) to enable/disable 
+        //profilePage.toggleEmailNotfication();
 		Thread.sleep(5000);
-		profilePage.favouriteProfile();
+	//Favourite the Profile page
+	profilePage.favouriteProfile();
    	}
 }
