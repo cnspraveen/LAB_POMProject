@@ -19,6 +19,9 @@ public class SFBasePage implements CMAutomationConstants
     @FindBy(xpath="//a[@title='Profile']//span[@class='ng-scope'][contains(text(),'Profile')]")
       private WebElement profileOption;
     
+    @FindBy(xpath="//a[@title='Quick Links']//span[@class='ng-scope'][contains(text(),'Quick Links')]")
+    private WebElement quickLinksOption;
+    
     @FindBy(xpath="//a[@title='Sign Out']//span[@class='ng-scope'][contains(text(),'Sign Out')]")
     private WebElement signOut;
     
@@ -44,6 +47,7 @@ public class SFBasePage implements CMAutomationConstants
     public void profile() throws InterruptedException
     {
     	 profileExpand.click();
+    	 Thread.sleep(2000);
     	 profileOption.click();
     	 Thread.sleep(2000);
      }
@@ -52,5 +56,12 @@ public class SFBasePage implements CMAutomationConstants
      {
     	 supportExpand.click();
     	 askAQuestionOption.click();
+     }
+     
+     public void quickLinksOption() throws InterruptedException
+     {
+    	 profileExpand.click();
+    	 Thread.sleep(2000);
+    	 quickLinksOption.click();
      }
 }

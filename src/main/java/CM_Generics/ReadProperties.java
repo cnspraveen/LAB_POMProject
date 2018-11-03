@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.testng.asserts.SoftAssert;
+
 public class ReadProperties
 {	
 	public static String getPropValue(String path,String key)	
@@ -23,4 +25,11 @@ public class ReadProperties
 	//	{e.printStackTrace();}
 		finally{return(prop.getProperty(key));}
 		}
+	
+	public static void assertCheck(String expectedString,String actualString)	
+	{
+		SoftAssert softassert = new SoftAssert();
+		softassert.assertEquals(expectedString,actualString);
+		System.out.println("Assert check complete");
+	}
 }

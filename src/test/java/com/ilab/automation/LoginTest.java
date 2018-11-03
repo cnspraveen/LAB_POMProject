@@ -11,6 +11,7 @@ import CM_POMPages.SF1Login_Page;
 import CM_POMPages.SF2AllowAccess_Page;
 import CM_POMPages.SF3Dashboard_Page;
 import CM_POMPages.SF5ProfilePage;
+import CM_POMPages.SF6DedicatedQuickLinks_Page;
 import CM_POMPages.SFBasePage;
 
 public class LoginTest extends SuperNG
@@ -37,5 +38,16 @@ public class LoginTest extends SuperNG
 		Thread.sleep(5000);
 	//Favourite the Profile page
 	profilePage.favouriteProfile();
-   	}
+	Thread.sleep(5000);
+	bp.quickLinksOption();
+	
+	SF6DedicatedQuickLinks_Page dedicatequicklink = new SF6DedicatedQuickLinks_Page(driver);
+	dedicatequicklink.booksMarksTab();
+	Thread.sleep(3000);
+	//dedicatequicklink.nameExistInQuickLinks();
+	System.out.println("ActualquicklinksName : " + dedicatequicklink.nameExistInQuickLinks());
+	ReadProperties genericMethod = new ReadProperties();
+	genericMethod.assertCheck(ReadProperties.getPropValue(CMAutomationConstants.propfilepath, "profileNameInQuicklinkspage"), dedicatequicklink.nameExistInQuickLinks());
+    
+	}
 }

@@ -19,14 +19,18 @@ public class SF5ProfilePage extends SFBasePage
    @FindBy(xpath="//div[@class='slider round']")
    public WebElement toggleButtonInPrefTab;
    
-   @FindBy(xpath="//span[@class='segmented-text ng-scope'][contains(text(),'Profile')]")
+  @FindBy(xpath="//span[@class='segmented-text ng-scope'][contains(text(),'Profile')]")
    public WebElement profileTab;
    
    @FindBy(xpath="//span[@class='favorite-star cm-icon-outline-star brand-color-pri']")
-   public WebElement favoriteIcon;
+   		//"//span[@class='favorite-star cm-icon-filled-star brand-color-pri']")
+	   //"//span[@class='favorite-star cm-icon-outline-star brand-color-pri']")
+    public WebElement favoriteIcon;
    
    @FindBy(xpath="//span[@class='favorite-star cm-icon-filled-star brand-color-pri']")
-   public WebElement UnfavoriteIcon;
+                                   //span[@class='favorite-star cm-icon-filled-star brand-color-pri']
+                                  //span[@class='favorite-star cm-icon-outline-star brand-color-pri']
+    public WebElement UnfavoriteIcon;
    
    @FindBy(xpath="//div[@class='popover-content']//input[@type='text']")
    public WebElement favouriteName;
@@ -56,7 +60,7 @@ public class SF5ProfilePage extends SFBasePage
 	   favouriteName.sendKeys(ReadProperties.getPropValue(CMAutomationConstants.propfilepath, "profilePageName"));
 	   Thread.sleep(5000);
 	   favSaveButton.click();
-	   Thread.sleep(6000);
-	   UnfavoriteIcon.click();
+	   //Thread.sleep(11000);   
+	   //UnfavoriteIcon.click();
    }
 }

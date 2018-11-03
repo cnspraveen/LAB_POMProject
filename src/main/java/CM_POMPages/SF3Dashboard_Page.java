@@ -16,6 +16,7 @@ public class SF3Dashboard_Page
    @FindBy(xpath="//a[@title='Profile picture']//span[@title='Expand']")
    public WebElement profileExpand;
    
+   
    @FindBy(xpath="//a[@title='Sign Out']//span[@class='ng-scope'][contains(text(),'Sign Out')]")
    public WebElement signOut;
    
